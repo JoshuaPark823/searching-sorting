@@ -1,0 +1,27 @@
+.grid {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+
+    .grid-item {
+        height: 2em;
+        width: 2em;
+
+        margin: 0.5px;
+
+        position:relative;
+    }
+    
+    .grid-row-item:hover {
+        background-color: darkgray;
+    }
+
+    .grid-row-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: whitesmoke;
+    }
+}
