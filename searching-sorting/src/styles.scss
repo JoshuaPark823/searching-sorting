@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+
+html, body { 
+    height: 100%; 
+
+    background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
+
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
