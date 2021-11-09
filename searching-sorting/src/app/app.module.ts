@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GridMainComponent } from './components/main/grid-main.component';
+import { GridMainComponent } from './components/grid-main/grid-main.component';
+import { SortMainComponent } from './components/sort-main/sort-main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GridMainComponent
+    GridMainComponent,
+    SortMainComponent
   ],
   imports: [
     BrowserModule,
