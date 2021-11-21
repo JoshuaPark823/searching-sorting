@@ -1,0 +1,29 @@
+.main {
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sort-container {
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .node {
+            order: var(--position);
+
+            height: 5em;
+            width: 5em;
+
+            margin: 0.5em;
+
+            background-color:cadetblue ;
+        }
+    }
+}

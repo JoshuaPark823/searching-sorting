@@ -1,1 +1,9 @@
-<p>sort-view works!</p>
+<button (click) = "test()">test</button>
+
+<div class="main">
+    <div class="sort-container">
+        <div *ngFor = "let node of sortableItems; index as i" class="node" style = "--position: {{ i }}">
+            {{ node }} + idx: {{ i }}
+        </div>
+    </div>
+</div>
