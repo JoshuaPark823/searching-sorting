@@ -20,7 +20,7 @@ export class SortViewComponent implements OnInit {
   }
 
   swap(index1: any, index2: any): void {
-    [this.sortableItems[index1], this.sortableItems[index2]] = [this.sortableItems[index2], this.sortableItems[index1]]
+    [this.sortableItems[index1], this.sortableItems[index2]] = [this.sortableItems[index2], this.sortableItems[index1]];
   }
 
 }
