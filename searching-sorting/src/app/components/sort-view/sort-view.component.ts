@@ -17,7 +17,9 @@ export class SortViewComponent implements OnInit {
     {name:'one',value:1},
     {name:'two',value:2},
     {name:'three',value:3},
-    {name:'four',value:4}
+    {name:'four',value:4},
+    {name:'five',value:5},
+    {name:'six',value:6}
   ]
 
   constructor(private builder: AnimationBuilder) { }
