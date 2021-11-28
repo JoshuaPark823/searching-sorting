@@ -1,14 +1,16 @@
-<button (click) = "click()">test</button>
+<button (click) = "triggerAnimation()">test</button>
 
 <div class="main">
-    <div>
-        <ng-container *ngFor="let item of data;let i=index">
-            <div class="div" *animate="'150ms ease-in-out';pos0:item==itemAdd"> 
-                {{item.name}}-{{item.value}}
+    <div class="sort-container">
+
+        <!-- Node items from the list of displayable nodes -->
+        <ng-container *ngFor = "let item of data;let i=index">
+            <div 
+                *animate = "'150ms ease-in-out'; pos0: false" 
+                class = "node">
+
+                {{item.name}}
             </div>
         </ng-container>
     </div>
-    <pre>
-        {{data|json}}
-    </pre>
 </div>

@@ -13,14 +13,12 @@ export class SortViewComponent implements OnInit {
 
   @ViewChildren(AnimateDirective) items!:QueryList<AnimateDirective>
 
-  data:any[]=[{name:'one',value:1},
-  {name:'two',value:2},
-  {name:'three',value:3},
-  {name:'four',value:4}
+  data:any[]=[
+    {name:'one',value:1},
+    {name:'two',value:2},
+    {name:'three',value:3},
+    {name:'four',value:4}
   ]
-
-  name = "Angular";
-  itemAdd:any;
 
   constructor(private builder: AnimationBuilder) { }
 
@@ -28,12 +26,13 @@ export class SortViewComponent implements OnInit {
 
   }
 
-  test(): void {
-
+  swap(index1: any, index2: any): void {
+    [this.data[index1], this.data[index2]] = [this.data[index2], this.data[index1]];
   }
 
-  click() {
-    this.data=this.data.map(x=>({item:x,value:Math.random()})).sort((a,b)=>a.value-b.value).map(x=>x.item)
+  triggerAnimation() {
+    // this.data=this.data.map(x=>({item:x,value:Math.random()})).sort((a,b)=>a.value-b.value).map(x=>x.item)
+    this.swap(1, 3);
     this.items.forEach( x => x.animateGo())
   }
 }
