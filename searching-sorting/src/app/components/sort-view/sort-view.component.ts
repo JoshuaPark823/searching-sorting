@@ -9,8 +9,6 @@ import { AnimateDirective } from 'src/app/directives/animate.directive';
 })
 export class SortViewComponent implements OnInit {
 
-  sortableItems = [0, 1, 2, 3, 4, 5];
-
   @ViewChildren(AnimateDirective) items!:QueryList<AnimateDirective>
 
   data:any[]=[
@@ -28,13 +26,20 @@ export class SortViewComponent implements OnInit {
 
   }
 
-  swap(index1: any, index2: any): void {
-    [this.data[index1], this.data[index2]] = [this.data[index2], this.data[index1]];
+  test(): void {
+    this.swap(0, 3);
   }
 
-  triggerAnimation() {
-    // this.data=this.data.map(x=>({item:x,value:Math.random()})).sort((a,b)=>a.value-b.value).map(x=>x.item)
-    this.swap(1, 3);
-    this.items.forEach( x => x.animateGo())
+  async swap(index1: any, index2: any) {
+    [this.data[index1], this.data[index2]] = [this.data[index2], this.data[index1]];
+
+    // this.items.get(index1)?.animateGo();
+    // this.items.get(index2)?.animateGo();
+
+    this.items.forEach( x => x.animateGo());
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 }
