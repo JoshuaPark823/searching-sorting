@@ -8,17 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchViewComponent } from './components/search-view/search-view.component';
 import { SortViewComponent } from './components/sort-view/sort-view.component';
 
+import { FormsModule } from '@angular/forms';
+import { AnimateDirective } from './directives/animate.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchViewComponent,
-    SortViewComponent
+    SortViewComponent,
+    AnimateDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

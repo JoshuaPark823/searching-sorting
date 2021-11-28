@@ -1,9 +1,14 @@
-<button (click) = "test()">test</button>
+<button (click) = "click()">test</button>
 
 <div class="main">
-    <div class="sort-container">
-        <div *ngFor = "let node of sortableItems; index as i" class="node" style = "--position: {{ i }}">
-            {{ node }} + idx: {{ i }}
-        </div>
+    <div>
+        <ng-container *ngFor="let item of data;let i=index">
+            <div class="div" *animate="'150ms ease-in-out';pos0:item==itemAdd"> 
+                {{item.name}}-{{item.value}}
+            </div>
+        </ng-container>
     </div>
+    <pre>
+        {{data|json}}
+    </pre>
 </div>

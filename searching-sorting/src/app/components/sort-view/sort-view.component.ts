@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AnimationBuilder } from '@angular/animations';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AnimateDirective } from 'src/app/directives/animate.directive';
 
 @Component({
   selector: 'app-sort-view',
@@ -9,18 +11,29 @@ export class SortViewComponent implements OnInit {
 
   sortableItems = [0, 1, 2, 3, 4, 5];
 
-  constructor() { }
+  @ViewChildren(AnimateDirective) items!:QueryList<AnimateDirective>
+
+  data:any[]=[{name:'one',value:1},
+  {name:'two',value:2},
+  {name:'three',value:3},
+  {name:'four',value:4}
+  ]
+
+  name = "Angular";
+  itemAdd:any;
+
+  constructor(private builder: AnimationBuilder) { }
 
   ngOnInit(): void {
 
   }
 
   test(): void {
-    this.swap(1, 4);
+
   }
 
-  swap(index1: any, index2: any): void {
-    [this.sortableItems[index1], this.sortableItems[index2]] = [this.sortableItems[index2], this.sortableItems[index1]];
+  click() {
+    this.data=this.data.map(x=>({item:x,value:Math.random()})).sort((a,b)=>a.value-b.value).map(x=>x.item)
+    this.items.forEach( x => x.animateGo())
   }
-
 }
