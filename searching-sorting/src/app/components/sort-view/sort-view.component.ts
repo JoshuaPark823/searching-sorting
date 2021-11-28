@@ -27,15 +27,11 @@ export class SortViewComponent implements OnInit {
   }
 
   test(): void {
-    this.swap(0, 3);
+    this.swap(0, 2);
   }
 
-  async swap(index1: any, index2: any) {
+  swap(index1: any, index2: any) {
     [this.data[index1], this.data[index2]] = [this.data[index2], this.data[index1]];
-
-    // this.items.get(index1)?.animateGo();
-    // this.items.get(index2)?.animateGo();
-
     this.items.forEach( x => x.animateGo());
   }
 
